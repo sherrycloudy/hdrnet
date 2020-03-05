@@ -28,6 +28,19 @@ import hdrnet.metrics as metrics
 import hdrnet.models as models
 import hdrnet.data_pipeline as dp
 
+# logging.basicConfig(level=logging.DEBUG,
+#                     format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
+#                     datefmt='%a, %d %b %Y %H:%M:%S',
+#                     filename='/tmp/test.log',
+#                     filemode='w')
+# 在logging.basicConfig()函数中可通过具体参数来更改logging模块默认行为
+# filename：用指定的文件名创建FiledHandler
+# filemode：文件打开方式，在指定了filename时使用这个参数，默认值为“a”还可指定为“w”。
+# format：指定handler使用的日志显示格式。
+# datefmt：指定日期时间格式。
+# level：设置rootlogger（后边会讲解具体概念）的日志级别
+# stream：用指定的stream创建StreamHandler。可以指定输出到sys.stderr,sys.stdout或者文件，默认为sys.stderr。若同时列出了filename和stream两个参数，则stream参数会被忽略。
+# logging.basicConfig()（用默认日志格式（Formatter）为日志系统建立一个默认的流处理器（StreamHandler），设置基础配置（如日志级别等）并加到root logger（根Logger）中）这几个logging模块级别的函数，另外还有一个模块级别的函数是logging.getLogger([name])（返回一个logger对象，如果没有指定名字将返回root logger）
 
 logging.basicConfig(format="[%(process)d] %(levelname)s %(filename)s:%(lineno)s | %(message)s")
 log = logging.getLogger("train")
